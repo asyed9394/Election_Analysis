@@ -19,7 +19,8 @@ In addition to Candidate analysis , Board has asked to provid additional results
 - Software: Python 3.7, Visual Studio Code Version 1.52.1
 - Link to the python program created to process election results and generate output: [PyPoll_Challenge.py](PyPoll_Challenge.py)
 - Data source "election_results.csv" format : see the below screenshot to see the expected file format for data source.
-  [datasource file format](Resources/Election_results_format.png)
+
+  ![datasource file format](Resources/Election_results_format.png)
 
 
 ## Election Audit Results
