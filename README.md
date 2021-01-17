@@ -17,6 +17,9 @@ In addition to Candidate analysis , Board has asked to provid additional results
 ## Resources
 - Data source: election_results.csv [Link to election results raw data](Resources/election_results.csv)
 - Software: Python 3.7, Visual Studio Code Version 1.52.1
+- Link to the python program created to process election results and generate output: [PyPoll_Challenge.py](PyPoll_Challenge.py)
+- Data source "election_results.csv" format : see the below screenshot to see the expected file format for data source.
+
 
 ## Summary
 The analysis of the election show that:
