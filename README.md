@@ -59,10 +59,10 @@ The program created for this election analysis could also be used for any other 
 
 The code can be run with following modifications to point to a new election results file.
 
-1. Modify the file_to_load variable to point to the new file name and path. The expectation is that file is location in subfolder "Resources" where the code "PyPoll_Challenge.py" is saved. you can change the file name "election_results.csv" to the new file name. 
-    file_to_load = os.path.join( "Resources", "election_results.csv")
+1. Modify the file_to_load variable to point to the new file name and path. The expectation is that file is location in subfolder "Resources" where the code "PyPoll_Challenge.py" is saved. you can change the file name "election_results.csv" to the new file name.
+    - file_to_load = os.path.join( "Resources", "election_results.csv")
 2. Also change the variable "file_to_save" to use a different output file name.
-    file_to_save = os.path.join("Analysis", "election_analysis.txt")
+    - file_to_save = os.path.join("Analysis", "election_analysis.txt")
   
 
 
