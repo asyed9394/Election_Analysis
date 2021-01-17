@@ -15,7 +15,7 @@ In addition to Candidate analysis , Board has asked to provid additional results
 3. The county with highest turnout
 
 ## Resources
-- Data source: election_results.csv {Link to election results raw data}(Resources/election_results.csv)
+- Data source: election_results.csv [Link to election results raw data](Resources/election_results.csv)
 - Software: Python 3.7, Visual Studio Code Version 1.52.1
 
 ## Summary
