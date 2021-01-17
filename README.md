@@ -35,8 +35,7 @@ The analysis of the election show that:
 - The county with the largest turnout is Denver.
 
 ### Candidate Analysis:
-- The candidates were :The analysis of the election show that:
-- There were 369,711 votes cast in the election.
+- The candidates were:
   - Charles Casper Stockham
   - Diana DeGette
   - Raymon Anthony Doane
@@ -44,6 +43,7 @@ The analysis of the election show that:
   - Charles Casper Stockham received 23.0% of the vote and 85,213 number of votes.
   - Diana DeGette received 73.8% of the vote and 272,892 number of votes.  
   - Raymon Anthony Doane received 3.1% of the vote and 11,606 of votes.
+  
 #### Winning Candidate:
 The winner of the election was:
   - Diana DeGette who received 73.8% of the vote and 272,892 number of votes.
@@ -52,6 +52,20 @@ The winner of the election was:
  The election results analysis is also provided in the [Election Results](Analysis/election_analysis.txt)
  
  ## Summary
+ 
+The program created for this election analysis could also be used for any other election results analysis to output candidate and county anaysis given that:
+- Election results are provided in the format. [Election results data source format](Resources/Election_results_format.png).
+- Also note that the program doesn't check for duplicate ballot id, so the data source should be a cosolidated ballot information from all voting methods and have unique ballot ids.
+
+The code can be run with following modifications to point to a new election results file.
+
+1. Modify the file_to_load variable to point to the new file name and path. The expectation is that file is location in subfolder "Resources" where the code "PyPoll_Challenge.py" is saved. you can change the file name "election_results.csv" to the new file name. 
+  file_to_load = os.path.join( "Resources", "election_results.csv")
+2.Also change the variable "file_to_save" to use a different output file name.
+  file_to_save = os.path.join("Analysis", "election_analysis.txt")
+  
+
+
  
  
  
