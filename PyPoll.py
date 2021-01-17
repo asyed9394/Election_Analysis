@@ -15,13 +15,15 @@ file_to_load=os.path.join("Resources","election_results.csv")
 #Create a file name variable to direct or indirect path to the file.
 file_to_save=os.path.join("Analysis","election_analysis.txt")
 
-#Method1
-#election_data=open(file_to_load,'r')
-##To do :perform analysis
-#election_data.close
-#open the election results and read the file.
 
-#Method 2
+#Initialize a total vote counter.
+total_votes=0
+
+#Create list variable to hold candidates names
+candidate_options =[]
+
+#Create empty dictionary to hold votes and candidate names.
+candidate_votes={}
 
 with open(file_to_load) as election_data:
 
@@ -30,33 +32,51 @@ with open(file_to_load) as election_data:
 
     #Print the header row
     header=next(file_reader)
-    print(header)
+    #print(header)
     for row in file_reader:
-        print(row)
+        #Add the total voites count for each row excluding header
+        total_votes +=1
 
-    #print the file object
-    print(election_data) ## why the print output doesn't match what is in the documentation
+        #Assign the candidtate name from each row, it is third column
+        candidate_name = row[2]
+        
+        if candidate_name not in candidate_options:
+            #Add to the list of candidates
+            candidate_options.append(candidate_name)
+            #begin tracking canadidate votes
+            candidate_votes[candidate_name]=0 
+            #Increment candidate vots 
+        candidate_votes[candidate_name] +=1
+
+    #Print the total votes
+    #print(f"Total votes casted:{total_votes}")
+    #Print the candidate list
+    #print(candidate_options)
+    #print the candidiate votes.
+    #print(candidate_votes)
+#Winning cadidate and winning total
+winning_candidate=""
+winnig_votes=0
+winning_percentage=0
+
+#Determine the percentage of votes for each candididate by looping throught the candidate vote dictionary
+for candidate_name in candidate_votes:
+    votes=candidate_votes[candidate_name]
+    vote_percentage= float(votes)/float(total_votes) * 100
+    #print the candidate name and votes percentage
+    #print(f"{candidate_name}: received {vote_percentage:.1f}% of the vote.")
+    print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+    if (votes>winnig_votes) and (vote_percentage >winning_percentage):
+        winnig_votes=votes
+        winning_percentage=vote_percentage
+        winning_candidate=candidate_name
+#To print out the winning cadidate name , votes and votes percentage to the terminal.
+winning_candidate_summary=(
+    f"------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winning Vote Count: {winnig_votes:,}\n"
+    f"Winning Percentage: {winning_percentage:.1f}%\n")
+print(winning_candidate_summary)
 
 
-#Method 1 to write
-#using the open function with w mode we will write data to the file.
-#outfile=open(file_to_save,"w")
-#write some data to the file
-#outfile.write("Hello World")
-#outfile.close
-
-#Use with statement to open the file as a text file.
-
-with open(file_to_save,"w") as txt_file:
     
-    #write some data to text file
-    #txt_file.write("Hello World")
-
-    #txt_file.write("Arapahoe")
-    #txt_file.write("Denver")
-    #txt_file.write("Jaffesron")
-    #txt_file.write("Arapahoe, ")
-    #txt_file.write("Denver, ")
-    #txt_file.write("Jaffesron, ")
-    #txt_file.write("Arapahoe, Denver, Jafferson")
-    txt_file.write("Araphoe\nDenver\Jafferson")
